@@ -30,61 +30,64 @@ class _LoginScreenState extends State<LoginScreen> {
                     bottomLeft: Radius.circular(20),
                     bottomRight: Radius.circular(20),
                   ),
-                  child: Container(
-                    color: const Color.fromARGB(255, 217, 217, 217),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset(
-                          'assets/images/logo.png',
-                          height: 140,
-                        ),
-                        const SizedBox(height: 20),
-                        Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  isLogin = true;
-                                });
-                              },
-                              child: Text(
-                                'Login',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: isLogin
-                                      ? FontWeight.bold
-                                      : FontWeight.normal,
-                                  color: isLogin
-                                      ? const Color.fromARGB(255, 250, 74, 12)
-                                      : Colors.grey,
+                  child: SingleChildScrollView(
+                    child: Container(
+                      color: const Color.fromARGB(255, 217, 217, 217),
+                      child: Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset(
+                            'assets/images/logo.png',
+                            height: 140,
+                          ),
+                          const SizedBox(height: 20),
+                          Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isLogin = true;
+                                  });
+                                },
+                                child: Text(
+                                  'Login',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: isLogin
+                                        ? FontWeight.bold
+                                        : FontWeight.normal,
+                                    color: isLogin
+                                        ? const Color.fromARGB(255, 250, 74, 12)
+                                        : Colors.grey,
+                                  ),
                                 ),
                               ),
-                            ),
-                            const SizedBox(width: 20),
-                            TextButton(
-                              onPressed: () {
-                                setState(() {
-                                  isLogin = false;
-                                });
-                              },
-                              child: Text(
-                                'Sign-up',
-                                style: TextStyle(
-                                  fontSize: 18,
-                                  fontWeight: isLogin
-                                      ? FontWeight.normal
-                                      : FontWeight.bold,
-                                  color: isLogin
-                                      ? Colors.grey
-                                      : const Color.fromARGB(255, 250, 74, 12),
+                              const SizedBox(width: 20),
+                              TextButton(
+                                onPressed: () {
+                                  setState(() {
+                                    isLogin = false;
+                                  });
+                                },
+                                child: Text(
+                                  'Sign-up',
+                                  style: TextStyle(
+                                    fontSize: 18,
+                                    fontWeight: isLogin
+                                        ? FontWeight.normal
+                                        : FontWeight.bold,
+                                    color: isLogin
+                                        ? Colors.grey
+                                        : const Color.fromARGB(
+                                            255, 250, 74, 12),
+                                  ),
                                 ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ],
+                            ],
+                          ),
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -107,8 +110,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget buildLoginForm() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return ListView(
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const TextField(
           decoration: InputDecoration(
@@ -161,8 +164,8 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget buildSignUpForm() {
-    return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+    return ListView(
+      // mainAxisAlignment: MainAxisAlignment.center,
       children: [
         const TextField(
           decoration: InputDecoration(

@@ -4,42 +4,42 @@ import 'package:flutter_project/src/views/home_screen.dart';
 class searchScreen extends StatelessWidget {
   final List<Map<String, String>> foodItems = [
     {
-      "image": "lib/asset/veggie_tomato_mix.png",
+      "image": "assets/images/veggie_tomato_mix.png",
       "name": "Veggie tomato mix",
       "price": "៛១៩,០០០"
     },
     {
-      "image": "lib/asset/egg_cucumber.png",
+      "image": "assets/images/egg_cucumber.png",
       "name": "Egg and cucumber",
       "price": "៛១៥,០០០"
     },
     {
-      "image": "lib/asset/veggie_tomato_mix.png",
+      "image": "assets/images/veggie_tomato_mix.png",
       "name": "Fried chicken m.",
       "price": "៛២៦,០០០"
     },
     {
-      "image": "lib/asset/veggie_tomato_mix.png",
+      "image": "assets/images/veggie_tomato_mix.png",
       "name": "Moi-moi and ekpa.",
       "price": "៛១៧,៥០០"
     },
     {
-      "image": "lib/asset/veggie_tomato_mix.png",
+      "image": "assets/images/veggie_tomato_mix.png",
       "name": "Fried chicken m.",
       "price": "៛២៦,០០០"
     },
     {
-      "image": "lib/asset/veggie_tomato_mix.png",
+      "image": "assets/images/veggie_tomato_mix.png",
       "name": "Moi-moi and ekpa.",
       "price": "៛១៧,៥០០"
     },
     {
-      "image": "lib/asset/veggie_tomato_mix.png",
+      "image": "assets/images/veggie_tomato_mix.png",
       "name": "Fried chicken m.",
       "price": "៛២៦,០០០"
     },
     {
-      "image": "lib/asset/veggie_tomato_mix.png",
+      "image": "assets/images/veggie_tomato_mix.png",
       "name": "Moi-moi and ekpa.",
       "price": "៛១៧,៥០០"
     },
@@ -67,7 +67,7 @@ class searchScreen extends StatelessWidget {
           children: [
             const Text(
               'Found 6 results',
-              style: const TextStyle(
+              style: TextStyle(
                 fontSize: 24,
                 fontWeight: FontWeight.bold,
               ),

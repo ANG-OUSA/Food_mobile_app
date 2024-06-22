@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+// ignore: camel_case_types
 class searching extends StatefulWidget {
   const searching({super.key});
 

@@ -1,6 +1,6 @@
 import 'dart:async';
-import 'package:chhit_flutter_project/src/authentication/login_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/src/authentication/login_screen.dart';
 
 class MySplashScreen extends StatefulWidget {
   const MySplashScreen({super.key});
@@ -46,7 +46,9 @@ class _MySplashScreenState extends State<MySplashScreen> {
                         color: Colors.white,
                         borderRadius: BorderRadius.circular(35),
                       ),
-                      child: const Image(image: AssetImage("assets/images/logo.png"), fit: BoxFit.contain),
+                      child: const Image(
+                          image: AssetImage("assets/images/logo.png"),
+                          fit: BoxFit.contain),
                     ),
                   ),
                   const Center(
@@ -59,7 +61,9 @@ class _MySplashScreenState extends State<MySplashScreen> {
                       ),
                     ),
                   ),
-                  const SizedBox(height: 30,),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   SingleChildScrollView(
                     scrollDirection: Axis.vertical,
                     child: Row(
@@ -70,7 +74,9 @@ class _MySplashScreenState extends State<MySplashScreen> {
                       ],
                     ),
                   ),
-                  const SizedBox(height: 30,),
+                  const SizedBox(
+                    height: 30,
+                  ),
                   Center(
                     child: Padding(
                       padding: const EdgeInsets.all(20),
@@ -81,12 +87,18 @@ class _MySplashScreenState extends State<MySplashScreen> {
                           duration: const Duration(seconds: 1),
                           child: TextButton(
                             onPressed: () {
-                              Navigator.push(context, MaterialPageRoute(builder: (context)=> LoginScreen()));
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) =>
+                                          const LoginScreen()));
                             },
                             style: TextButton.styleFrom(
-                              foregroundColor: const Color.fromARGB(255, 255, 75, 58),
+                              foregroundColor:
+                                  const Color.fromARGB(255, 255, 75, 58),
                               backgroundColor: Colors.white,
-                              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                              padding: const EdgeInsets.symmetric(
+                                  horizontal: 24, vertical: 12),
                               shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10),
                               ),

@@ -1,10 +1,11 @@
-import 'package:chhit_flutter_project/src/views/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/src/views/home_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
 
   @override
+  // ignore: library_private_types_in_public_api
   _LoginScreenState createState() => _LoginScreenState();
 }
 
@@ -15,7 +16,7 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor:const Color.fromARGB(255, 217, 217, 217),
+        backgroundColor: const Color.fromARGB(255, 217, 217, 217),
         elevation: 0,
       ),
       body: SafeArea(
@@ -52,8 +53,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 'Login',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  fontWeight: isLogin ? FontWeight.bold : FontWeight.normal,
-                                  color: isLogin ? const Color.fromARGB(255, 250, 74, 12) : Colors.grey,
+                                  fontWeight: isLogin
+                                      ? FontWeight.bold
+                                      : FontWeight.normal,
+                                  color: isLogin
+                                      ? const Color.fromARGB(255, 250, 74, 12)
+                                      : Colors.grey,
                                 ),
                               ),
                             ),
@@ -68,8 +73,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 'Sign-up',
                                 style: TextStyle(
                                   fontSize: 18,
-                                  fontWeight: isLogin ? FontWeight.normal : FontWeight.bold,
-                                  color: isLogin ? Colors.grey : const Color.fromARGB(255, 250, 74, 12),
+                                  fontWeight: isLogin
+                                      ? FontWeight.normal
+                                      : FontWeight.bold,
+                                  color: isLogin
+                                      ? Colors.grey
+                                      : const Color.fromARGB(255, 250, 74, 12),
                                 ),
                               ),
                             ),
@@ -112,7 +121,6 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             labelText: 'Password',
             hintText: 'Password',
-
           ),
           obscureText: true,
         ),
@@ -132,7 +140,8 @@ class _LoginScreenState extends State<LoginScreen> {
           width: double.infinity,
           child: ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()));
             },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -143,7 +152,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             child: const Text(
               'Login',
-              style: TextStyle(fontSize: 18,color: Colors.white),
+              style: TextStyle(fontSize: 18, color: Colors.white),
             ),
           ),
         ),
@@ -159,7 +168,6 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             labelText: 'Email address',
             hintText: 'Email address',
-            
           ),
         ),
         const SizedBox(height: 20),
@@ -167,7 +175,6 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             labelText: 'Password',
             hintText: 'Password',
-
           ),
           obscureText: true,
         ),
@@ -176,7 +183,6 @@ class _LoginScreenState extends State<LoginScreen> {
           decoration: InputDecoration(
             labelText: 'Confirm Password',
             hintText: 'Confirm Password',
-
           ),
           obscureText: true,
         ),
@@ -185,7 +191,8 @@ class _LoginScreenState extends State<LoginScreen> {
           width: double.infinity,
           child: ElevatedButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>const HomeScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomeScreen()));
             },
             style: ElevatedButton.styleFrom(
               padding: const EdgeInsets.symmetric(vertical: 16),
@@ -196,7 +203,7 @@ class _LoginScreenState extends State<LoginScreen> {
             ),
             child: const Text(
               'Sign-up',
-              style: TextStyle(fontSize: 18,color: Colors.white),
+              style: TextStyle(fontSize: 18, color: Colors.white),
             ),
           ),
         ),

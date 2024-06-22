@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/ousa/ProfileScreen.dart';
 
 import '../addToCard/card_screen.dart';
 
@@ -16,7 +17,8 @@ class HomeScreen extends StatelessWidget {
           IconButton(
             icon: const Icon(Icons.shopping_cart, color: Colors.black),
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context)=>CardScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const CardScreen()));
             },
           ),
         ],
@@ -24,13 +26,16 @@ class HomeScreen extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          const Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text(
-              "Delicious",
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
+          GestureDetector(
+            onTap: () {},
+            child: const Padding(
+              padding: EdgeInsets.only(left: 20),
+              child: Text(
+                "Delicious",
+                style: TextStyle(
+                  fontSize: 32,
+                  fontWeight: FontWeight.bold,
+                ),
               ),
             ),
           ),
@@ -86,13 +91,24 @@ class HomeScreen extends StatelessWidget {
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                const SizedBox(width: 10,),
-                _buildCard('assets/images/food1.png', 'Veggie', 'tomato mix', 'N1,900'),
-                const SizedBox(width: 10,),
-                _buildCard('assets/images/food2.png', 'Veggie', 'tomato mix', 'N1,900'),
-                const SizedBox(width: 10,),
-                _buildCard('assets/images/food3.png', 'Veggie', 'tomato mix', 'N1,900'),
-                const SizedBox(width: 10,),
+                const SizedBox(
+                  width: 10,
+                ),
+                _buildCard('assets/images/food1.png', 'Veggie', 'tomato mix',
+                    'N1,900'),
+                const SizedBox(
+                  width: 10,
+                ),
+                _buildCard('assets/images/food2.png', 'Veggie', 'tomato mix',
+                    'N1,900'),
+                const SizedBox(
+                  width: 10,
+                ),
+                _buildCard('assets/images/food3.png', 'Veggie', 'tomato mix',
+                    'N1,900'),
+                const SizedBox(
+                  width: 10,
+                ),
               ],
             ),
           ),
@@ -127,8 +143,51 @@ class HomeScreen extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 150),
                 children: [
                   ListTile(
-                    leading: const Icon(Icons.person_3_rounded, color: Colors.white),
-                    title: const Text('Profile ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16)),
+                    leading:
+                        const Icon(Icons.person_3_rounded, color: Colors.white),
+                    title: const Text('Profile ',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16)),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ProfileScreen()));
+                    },
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    child: Divider(),
+                  ),
+                  ListTile(
+                    leading:
+                        const Icon(Icons.shopping_bag, color: Colors.white),
+                    title: const Text('Order ',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16)),
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const ProfileScreen()));
+                    },
+                  ),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20, right: 20),
+                    child: Divider(),
+                  ),
+                  ListTile(
+                    leading: const Icon(Icons.workspace_premium,
+                        color: Colors.white),
+                    title: const Text('Offer and promo',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16)),
                     onTap: () {
                       Navigator.pop(context);
                     },
@@ -138,30 +197,13 @@ class HomeScreen extends StatelessWidget {
                     child: Divider(),
                   ),
                   ListTile(
-                    leading: const Icon(Icons.shopping_bag, color: Colors.white),
-                    title: const Text('Order ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16)),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20),
-                    child: Divider(),
-                  ),
-                  ListTile(
-                    leading: const Icon(Icons.workspace_premium, color: Colors.white),
-                    title: const Text('Offer and promo', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16)),
-                    onTap: () {
-                      Navigator.pop(context);
-                    },
-                  ),
-                  const Padding(
-                    padding: EdgeInsets.only(left: 20, right: 20),
-                    child: Divider(),
-                  ),
-                  ListTile(
-                    leading: const Icon(Icons.document_scanner, color: Colors.white),
-                    title: const Text('Privacy policy', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16)),
+                    leading:
+                        const Icon(Icons.document_scanner, color: Colors.white),
+                    title: const Text('Privacy policy',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16)),
                     onTap: () {
                       Navigator.pop(context);
                     },
@@ -172,7 +214,11 @@ class HomeScreen extends StatelessWidget {
                   ),
                   ListTile(
                     leading: const Icon(Icons.security, color: Colors.white),
-                    title: const Text('Security ', style: TextStyle(color: Colors.white, fontWeight: FontWeight.w600, fontSize: 16)),
+                    title: const Text('Security ',
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontWeight: FontWeight.w600,
+                            fontSize: 16)),
                     onTap: () {
                       Navigator.pop(context);
                     },
@@ -180,24 +226,62 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            const Padding(
-              padding: EdgeInsets.all(25.0),
-              child: Row(
-                // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Text("Sign Out", style: TextStyle(color: Colors.white,fontSize: 18)),
-                  SizedBox(width: 10,),
-                  Icon(Icons.logout_outlined, color: Colors.white,size: 32,)
-                ],
+            // const Padding(
+            //   padding: EdgeInsets.all(25.0),
+            //   child: Row(
+            //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            //     children: [
+            //       Text("Sign Out",
+            //           style: TextStyle(color: Colors.white, fontSize: 18)),
+            //       SizedBox(
+            //         width: 10,
+            //       ),
+            //       Icon(
+            //         Icons.logout_outlined,
+            //         color: Colors.white,
+            //         size: 32,
+            //       )
+
+            //     ],
+
+            //   ),
+            // ),
+            GestureDetector(
+              onTap: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ProfileScreen()));
+              },
+              child: const Padding(
+                padding: EdgeInsets.all(25.0),
+                child: Row(
+                  // mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Sign Out",
+                      style: TextStyle(color: Colors.white, fontSize: 18),
+                    ),
+                    SizedBox(
+                      width: 10,
+                    ),
+                    Icon(
+                      Icons.logout_outlined,
+                      color: Colors.white,
+                      size: 32,
+                    ),
+                  ],
+                ),
               ),
-            ),
+            )
           ],
         ),
       ),
     );
   }
 
-  Widget _buildCategoryItem(BuildContext context, String title, bool isSelected) {
+  Widget _buildCategoryItem(
+      BuildContext context, String title, bool isSelected) {
     return Column(
       children: [
         Text(
@@ -218,7 +302,8 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _buildCard(String imagePath, String title1, String title2, String price) {
+  Widget _buildCard(
+      String imagePath, String title1, String title2, String price) {
     return Stack(
       clipBehavior: Clip.none,
       children: [
@@ -240,10 +325,14 @@ class HomeScreen extends StatelessWidget {
                     "tomato mix",
                     style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
                   ),
-                  SizedBox(height: 6,),
+                  SizedBox(
+                    height: 6,
+                  ),
                   Text(
                     "N1,900",
-                    style: TextStyle(color: Color.fromARGB(255, 250, 74, 12), fontWeight: FontWeight.bold),
+                    style: TextStyle(
+                        color: Color.fromARGB(255, 250, 74, 12),
+                        fontWeight: FontWeight.bold),
                   ),
                 ],
               ),

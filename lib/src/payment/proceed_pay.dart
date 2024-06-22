@@ -1,5 +1,5 @@
-import 'package:chhit_flutter_project/src/payment/payment_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/src/payment/payment_screen.dart';
 
 class ProceedPayScreen extends StatefulWidget {
   const ProceedPayScreen({super.key});
@@ -11,7 +11,6 @@ class ProceedPayScreen extends StatefulWidget {
 enum SingingCharacter { lafayette, jefferson }
 
 class _ProceedPayScreenState extends State<ProceedPayScreen> {
-
   SingingCharacter? _character = SingingCharacter.lafayette;
 
   @override
@@ -24,7 +23,7 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(left: 30,right: 30,top: 20),
+            padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -41,13 +40,18 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                   children: [
                     const Text(
                       "Address details",
-                      style: TextStyle(fontSize: 18,fontWeight: FontWeight.w800),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
                     ),
                     TextButton(
                       onPressed: () {
                         // Handle change action
                       },
-                      child: const Text("Change",style: TextStyle(color: Color.fromARGB(255, 255, 74, 12)),),
+                      child: const Text(
+                        "Change",
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 255, 74, 12)),
+                      ),
                     ),
                   ],
                 ),
@@ -58,13 +62,15 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                     color: Colors.white,
                     elevation: 4,
                     child: Padding(
-                      padding: const EdgeInsets.only(top: 10,bottom: 10,left: 30,right: 90),
+                      padding: const EdgeInsets.only(
+                          top: 10, bottom: 10, left: 30, right: 90),
                       child: Column(
                         crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           const Text(
                             "Marvis Kparobo",
-                            style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                           const SizedBox(height: 8),
                           Container(
@@ -72,9 +78,11 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                             // height: 2,
                             // width: 170,
                             decoration: BoxDecoration(
-                              // color: Colors.grey,
-                              border: Border.all(width: 1,color: const Color.fromARGB(255, 208, 207, 207))
-                            ),
+                                // color: Colors.grey,
+                                border: Border.all(
+                                    width: 1,
+                                    color: const Color.fromARGB(
+                                        255, 208, 207, 207))),
                           ),
                           const SizedBox(height: 8),
                           const Text("Km 5 refinery road oppsite re"),
@@ -85,29 +93,37 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                             width: double.infinity,
                             // height: 2,
                             decoration: BoxDecoration(
-                              // color: Colors.grey,
-                              border: Border.all(width: 1,color: const Color.fromARGB(255, 205, 205, 205))
-                            ),
+                                // color: Colors.grey,
+                                border: Border.all(
+                                    width: 1,
+                                    color: const Color.fromARGB(
+                                        255, 205, 205, 205))),
                           ),
                           const SizedBox(height: 8),
                           const Text("+234 9011039271"),
-                        
                         ],
                       ),
                     ),
                   ),
                 ),
-                const SizedBox(height: 30,),
-                const Align(
-                  alignment: Alignment.bottomLeft,
-                  child: Text("Delivery method",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w700),)
+                const SizedBox(
+                  height: 30,
                 ),
-                const SizedBox(height: 16,),
+                const Align(
+                    alignment: Alignment.bottomLeft,
+                    child: Text(
+                      "Delivery method",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w700),
+                    )),
+                const SizedBox(
+                  height: 16,
+                ),
                 Card(
                   color: Colors.white,
                   elevation: 4,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 6,bottom: 6),
+                    padding: const EdgeInsets.only(top: 6, bottom: 6),
                     child: Column(
                       children: [
                         RadioListTile<SingingCharacter>(
@@ -122,19 +138,21 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                           },
                         ),
                         const SizedBox(height: 8),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20,right: 20),
-                            child: Container(
-                              width: double.infinity,
-                              // height: 2,
-                              // width: 170,
-                              decoration: BoxDecoration(
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: Container(
+                            width: double.infinity,
+                            // height: 2,
+                            // width: 170,
+                            decoration: BoxDecoration(
                                 // color: Colors.grey,
-                                border: Border.all(width: 1,color: const Color.fromARGB(255, 208, 207, 207))
-                              ),
-                            ),
+                                border: Border.all(
+                                    width: 1,
+                                    color: const Color.fromARGB(
+                                        255, 208, 207, 207))),
                           ),
-                          const SizedBox(height: 8),
+                        ),
+                        const SizedBox(height: 8),
                         RadioListTile<SingingCharacter>(
                           title: const Text('jefferson'),
                           activeColor: const Color.fromARGB(255, 255, 74, 12),
@@ -150,16 +168,27 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                     ),
                   ),
                 ),
-                
-                const SizedBox(height: 36,),
+                const SizedBox(
+                  height: 36,
+                ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Total",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
-                    Text("\$23,000",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w800),)
+                    Text(
+                      "Total",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      "\$23,000",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                    )
                   ],
                 ),
-                const SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 Container(
                   width: double.infinity,
                   height: 60,
@@ -168,10 +197,19 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: TextButton(
-                    
-                    onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>PaymentScreen()));
-                  }, child: const Text("Proceed to payment",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),)),
+                      onPressed: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                                builder: (context) => PaymentScreen()));
+                      },
+                      child: const Text(
+                        "Proceed to payment",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      )),
                 )
               ],
             ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/ousa/ProfileScreen.dart';
-import 'package:flutter_project/ousa/searchScreen.dart';
+import 'package:flutter_project/src/authentication/login_screen.dart';
+import 'package:flutter_project/src/splashscreen/splash_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -19,7 +19,8 @@ class MyApp extends StatelessWidget {
         useMaterial3: true,
       ),
       debugShowCheckedModeBanner: false,
-      home: searchScreen(),
+      // home: searchScreen(),
+      home: const MySplashScreen(),
     );
   }
 }

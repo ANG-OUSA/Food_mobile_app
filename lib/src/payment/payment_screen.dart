@@ -1,5 +1,5 @@
-import 'package:chhit_flutter_project/src/views/home_screen.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_project/src/views/home_screen.dart';
 
 class PaymentScreen extends StatefulWidget {
   const PaymentScreen({super.key});
@@ -11,7 +11,6 @@ class PaymentScreen extends StatefulWidget {
 enum SingingCharacter { lafayette, jefferson }
 
 class _PaymentScreenState extends State<PaymentScreen> {
-
   SingingCharacter? _character = SingingCharacter.lafayette;
 
   @override
@@ -24,7 +23,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
-            padding: const EdgeInsets.only(left: 30,right: 30,top: 20),
+            padding: const EdgeInsets.only(left: 30, right: 30, top: 20),
             child: Column(
               // mainAxisAlignment: MainAxisAlignment.center,
               children: [
@@ -36,27 +35,33 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   ),
                 ),
                 const SizedBox(height: 40),
-                 Align(
+                const Align(
                   alignment: Alignment.bottomLeft,
-                   child: Text(
+                  child: Text(
                     "Payment method",
-                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.w800),
-                                   ),
-                 ),
-
-                const SizedBox(height: 16,),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                  ),
+                ),
+                const SizedBox(
+                  height: 16,
+                ),
                 Card(
                   color: Colors.white,
                   elevation: 4,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 6,bottom: 6),
+                    padding: const EdgeInsets.only(top: 6, bottom: 6),
                     child: Column(
                       children: [
                         RadioListTile<SingingCharacter>(
                           title: Row(
                             children: [
-                              Image.asset("assets/images/card.png",width: 40,),
-                              SizedBox(width: 6,),
+                              Image.asset(
+                                "assets/images/card.png",
+                                width: 40,
+                              ),
+                              const SizedBox(
+                                width: 6,
+                              ),
                               const Text('Card'),
                             ],
                           ),
@@ -70,24 +75,31 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           },
                         ),
                         const SizedBox(height: 8),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20,right: 20),
-                            child: Container(
-                              width: double.infinity,
-                              // height: 2,
-                              // width: 170,
-                              decoration: BoxDecoration(
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: Container(
+                            width: double.infinity,
+                            // height: 2,
+                            // width: 170,
+                            decoration: BoxDecoration(
                                 // color: Colors.grey,
-                                border: Border.all(width: 1,color: const Color.fromARGB(255, 208, 207, 207))
-                              ),
-                            ),
+                                border: Border.all(
+                                    width: 1,
+                                    color: const Color.fromARGB(
+                                        255, 208, 207, 207))),
                           ),
-                          const SizedBox(height: 8),
+                        ),
+                        const SizedBox(height: 8),
                         RadioListTile<SingingCharacter>(
                           title: Row(
                             children: [
-                              Image.asset("assets/images/card.png",width: 40,),
-                              SizedBox(width: 6,),
+                              Image.asset(
+                                "assets/images/card.png",
+                                width: 40,
+                              ),
+                              const SizedBox(
+                                width: 6,
+                              ),
                               const Text('Bank account'),
                             ],
                           ),
@@ -104,21 +116,24 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
-                 Align(
+                const SizedBox(
+                  height: 20,
+                ),
+                const Align(
                   alignment: Alignment.bottomLeft,
-                   child: Text(
+                  child: Text(
                     "Delivery method",
-                    style: TextStyle(fontSize: 18,fontWeight: FontWeight.w800),
-                                   ),
-                 ),
-
-                const SizedBox(height: 14,),
+                    style: TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                  ),
+                ),
+                const SizedBox(
+                  height: 14,
+                ),
                 Card(
                   color: Colors.white,
                   elevation: 4,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 6,bottom: 6),
+                    padding: const EdgeInsets.only(top: 6, bottom: 6),
                     child: Column(
                       children: [
                         RadioListTile<SingingCharacter>(
@@ -133,19 +148,21 @@ class _PaymentScreenState extends State<PaymentScreen> {
                           },
                         ),
                         const SizedBox(height: 8),
-                          Padding(
-                            padding: const EdgeInsets.only(left: 20,right: 20),
-                            child: Container(
-                              width: double.infinity,
-                              // height: 2,
-                              // width: 170,
-                              decoration: BoxDecoration(
+                        Padding(
+                          padding: const EdgeInsets.only(left: 20, right: 20),
+                          child: Container(
+                            width: double.infinity,
+                            // height: 2,
+                            // width: 170,
+                            decoration: BoxDecoration(
                                 // color: Colors.grey,
-                                border: Border.all(width: 1,color: const Color.fromARGB(255, 208, 207, 207))
-                              ),
-                            ),
+                                border: Border.all(
+                                    width: 1,
+                                    color: const Color.fromARGB(
+                                        255, 208, 207, 207))),
                           ),
-                          const SizedBox(height: 8),
+                        ),
+                        const SizedBox(height: 8),
                         RadioListTile<SingingCharacter>(
                           title: const Text('Bank account'),
                           activeColor: const Color.fromARGB(255, 255, 74, 12),
@@ -161,16 +178,27 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     ),
                   ),
                 ),
-                
-                const SizedBox(height: 36,),
+                const SizedBox(
+                  height: 36,
+                ),
                 const Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Text("Total",style: TextStyle(fontSize: 16,fontWeight: FontWeight.w500),),
-                    Text("\$23,000",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w800),)
+                    Text(
+                      "Total",
+                      style:
+                          TextStyle(fontSize: 16, fontWeight: FontWeight.w500),
+                    ),
+                    Text(
+                      "\$23,000",
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
+                    )
                   ],
                 ),
-                const SizedBox(height: 30,),
+                const SizedBox(
+                  height: 30,
+                ),
                 Container(
                   width: double.infinity,
                   height: 60,
@@ -179,10 +207,16 @@ class _PaymentScreenState extends State<PaymentScreen> {
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: TextButton(
-                    
-                    onPressed: (){
-                      _dialogBuilder(context);
-                  }, child: const Text("Proceed to payment",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),)),
+                      onPressed: () {
+                        _dialogBuilder(context);
+                      },
+                      child: const Text(
+                        "Proceed to payment",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      )),
                 )
               ],
             ),
@@ -192,7 +226,7 @@ class _PaymentScreenState extends State<PaymentScreen> {
     );
   }
 
-   Future<void> _dialogBuilder(BuildContext context) {
+  Future<void> _dialogBuilder(BuildContext context) {
     return showDialog<void>(
       context: context,
       builder: (BuildContext context) {
@@ -204,7 +238,6 @@ class _PaymentScreenState extends State<PaymentScreen> {
           content: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              
               const Text(
                 'Please note',
                 style: TextStyle(
@@ -252,24 +285,38 @@ class _PaymentScreenState extends State<PaymentScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 20,),
+              const SizedBox(
+                height: 20,
+              ),
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  TextButton(onPressed: (){
-                    Navigator.pop(context);
-                  }, child: Text("Cancel",style: TextStyle(color: Colors.black),)),
+                  TextButton(
+                      onPressed: () {
+                        Navigator.pop(context);
+                      },
+                      child: const Text(
+                        "Cancel",
+                        style: TextStyle(color: Colors.black),
+                      )),
                   Container(
                     width: 150,
                     decoration: BoxDecoration(
-                      color: Color.fromARGB(255, 255, 74, 12),
-                      borderRadius: BorderRadius.circular(20)
-                    ),
-                    child: TextButton(onPressed: (){
-                      Navigator.push(context, MaterialPageRoute(builder: (context)=>HomeScreen()));
-                    }, child: Text("Proceed",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600),)),
+                        color: const Color.fromARGB(255, 255, 74, 12),
+                        borderRadius: BorderRadius.circular(20)),
+                    child: TextButton(
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => const HomeScreen()));
+                        },
+                        child: const Text(
+                          "Proceed",
+                          style: TextStyle(
+                              color: Colors.white, fontWeight: FontWeight.w600),
+                        )),
                   ),
-
                 ],
               )
             ],

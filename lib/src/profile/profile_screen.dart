@@ -1,25 +1,23 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project/src/profile/ProfileScreen.dart';
 
-class ProfileScreen extends StatefulWidget {
-  const ProfileScreen({super.key});
+class MyProfileScreen extends StatefulWidget {
+  const MyProfileScreen({super.key});
 
   @override
-  State<ProfileScreen> createState() => _ProfileScreenState();
+  State<MyProfileScreen> createState() => _ProfileScreenState();
 }
 
-class _ProfileScreenState extends State<ProfileScreen> {
+class _ProfileScreenState extends State<MyProfileScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-
-      ),
+      appBar: AppBar(),
       body: SingleChildScrollView(
         child: Center(
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
-              // mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 const Align(
                   alignment: Alignment.bottomLeft,
@@ -34,13 +32,23 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   children: [
                     const Text(
                       "Personal details",
-                      style: TextStyle(fontSize: 18,fontWeight: FontWeight.w800),
+                      style:
+                          TextStyle(fontSize: 18, fontWeight: FontWeight.w800),
                     ),
                     TextButton(
                       onPressed: () {
-                        // Handle change action
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProfileScreen(),
+                          ),
+                        );
                       },
-                      child: const Text("Change",style: TextStyle(color: Color.fromARGB(255, 255, 74, 12)),),
+                      child: const Text(
+                        "Change",
+                        style:
+                            TextStyle(color: Color.fromARGB(255, 255, 74, 12)),
+                      ),
                     ),
                   ],
                 ),
@@ -49,14 +57,14 @@ class _ProfileScreenState extends State<ProfileScreen> {
                   color: Colors.white,
                   elevation: 4,
                   child: Padding(
-                    padding: const EdgeInsets.only(top: 10,bottom: 10,left: 15),
+                    padding:
+                        const EdgeInsets.only(top: 10, bottom: 10, left: 15),
                     child: Row(
                       // mainAxisAlignment: MainAxisAlignment.start,
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                     
                         Image.asset(
-                          "assets/images/pf.png",
+                          "assets/images/ousa.png",
                           width: 100,
                           height: 100,
                         ),
@@ -65,119 +73,166 @@ class _ProfileScreenState extends State<ProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             const Text(
-                              "Marvis Ighedosa",
-                              style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                              "ANG OUSA",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.bold),
                             ),
                             const SizedBox(height: 8),
-                            const Text("Dosamarvis@gmail.com"),
+                            const Text("ousa123@gmail.com"),
                             Container(
                               // width: double.infinity,
                               // height: 2,
                               width: 170,
                               decoration: BoxDecoration(
-                                // color: Colors.grey,
-                                border: Border.all(width: 1,color: Colors.grey)
-                              ),
+                                  // color: Colors.grey,
+                                  border:
+                                      Border.all(width: 1, color: Colors.grey)),
                             ),
-                            const Text("+234 9011039271"),
+                            const Text("+855 90110392"),
                             Container(
                               width: 170,
                               // height: 2,
                               decoration: BoxDecoration(
-                                // color: Colors.grey,
-                                border: Border.all(width: 1,color: Colors.grey)
-                              ),
+                                  // color: Colors.grey,
+                                  border:
+                                      Border.all(width: 1, color: Colors.grey)),
                             ),
-                            const Text("No 15 uti street off ovie "),
-                            const Text("palace road effurun delta"),
-                            const Text(" state"),
+                            const Text(
+                              "Street 349, Tual Kork,",
+                            ),
+                            const Text("Phnom Penh"),
                           ],
                         )
                       ],
                     ),
                   ),
                 ),
-                SizedBox(height: 20,),
+                const SizedBox(
+                  height: 20,
+                ),
                 const SizedBox(
                   height: 60,
                   child: Card(
-                    color: Colors.white,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 15,right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Orders",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
-                          Icon(Icons.arrow_right_outlined,size: 32,)
-                        ],
-                      ),
-                    )
-                  ),
+                      color: Colors.white,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Orders",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                            ),
+                            Icon(
+                              Icons.arrow_right_outlined,
+                              size: 32,
+                            )
+                          ],
+                        ),
+                      )),
                 ),
-                SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 const SizedBox(
                   height: 60,
                   child: Card(
-                    color: Colors.white,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 15,right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Pending reviews",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
-                          Icon(Icons.arrow_right_outlined,size: 32,)
-                        ],
-                      ),
-                    )
-                  ),
+                      color: Colors.white,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Pending reviews",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                            ),
+                            Icon(
+                              Icons.arrow_right_outlined,
+                              size: 32,
+                            )
+                          ],
+                        ),
+                      )),
                 ),
-                SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 const SizedBox(
                   height: 60,
                   child: Card(
-                    color: Colors.white,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 15,right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Faq",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
-                          Icon(Icons.arrow_right_outlined,size: 32,)
-                        ],
-                      ),
-                    )
-                  ),
+                      color: Colors.white,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Faq",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                            ),
+                            Icon(
+                              Icons.arrow_right_outlined,
+                              size: 32,
+                            )
+                          ],
+                        ),
+                      )),
                 ),
-                SizedBox(height: 16,),
+                const SizedBox(
+                  height: 16,
+                ),
                 const SizedBox(
                   height: 60,
                   child: Card(
-                    color: Colors.white,
-                    child: Padding(
-                      padding: EdgeInsets.only(left: 15,right: 15),
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text("Help",style: TextStyle(fontSize: 18,fontWeight: FontWeight.w600),),
-                          Icon(Icons.arrow_right_outlined,size: 32,)
-                        ],
-                      ),
-                    )
-                  ),
+                      color: Colors.white,
+                      child: Padding(
+                        padding: EdgeInsets.only(left: 15, right: 15),
+                        child: Row(
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          children: [
+                            Text(
+                              "Help",
+                              style: TextStyle(
+                                  fontSize: 18, fontWeight: FontWeight.w600),
+                            ),
+                            Icon(
+                              Icons.arrow_right_outlined,
+                              size: 32,
+                            )
+                          ],
+                        ),
+                      )),
                 ),
-                SizedBox(height: 36,),
+                const SizedBox(
+                  height: 36,
+                ),
                 Container(
                   width: double.infinity,
                   height: 60,
                   decoration: BoxDecoration(
-                    color: Color.fromARGB(255, 255, 74, 12),
+                    color: const Color.fromARGB(255, 255, 74, 12),
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: TextButton(
-                    
-                    onPressed: (){
-                  
-                  }, child: Text("Update",style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.w700),)),
+                      onPressed: () {
+                        Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProfileScreen(),
+                          ),
+                        );
+                      },
+                      child: const Text(
+                        "Update",
+                        style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 20,
+                            fontWeight: FontWeight.w700),
+                      )),
                 )
               ],
             ),

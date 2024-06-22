@@ -1,6 +1,5 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+import 'package:flutter_project/src/views/home_screen.dart';
 
 class searchScreen extends StatelessWidget {
   final List<Map<String, String>> foodItems = [
@@ -45,7 +44,6 @@ class searchScreen extends StatelessWidget {
       "price": "៛១៧,៥០០"
     },
   ];
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -54,7 +52,12 @@ class searchScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Handle back button action
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomeScreen(),
+              ),
+            );
           },
         ),
       ),

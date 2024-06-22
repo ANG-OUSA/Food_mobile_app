@@ -64,15 +64,12 @@ class _MySplashScreenState extends State<MySplashScreen> {
                   const SizedBox(
                     height: 30,
                   ),
-                  SingleChildScrollView(
-                    scrollDirection: Axis.vertical,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image.asset("assets/images/icon2.png", width: 210),
-                        Image.asset("assets/images/icon1.png", width: 200),
-                      ],
-                    ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Image.asset("assets/images/icon2.png", width: 210),
+                      Image.asset("assets/images/icon1.png", width: 180),
+                    ],
                   ),
                   const SizedBox(
                     height: 30,

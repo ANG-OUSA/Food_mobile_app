@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project/ousa/ProfileScreen.dart';
+import 'package:flutter_project/src/authentication/login_screen.dart';
+import 'package:flutter_project/src/profile/ProfileScreen.dart';
+import 'package:flutter_project/src/search/searchScreen.dart';
 
 import '../addToCard/card_screen.dart';
 
@@ -23,96 +25,109 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          GestureDetector(
-            onTap: () {},
-            child: const Padding(
+      body: SingleChildScrollView(
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            GestureDetector(
+              onTap: () {},
+              child: const Padding(
+                padding: EdgeInsets.only(left: 20),
+                child: Text(
+                  "Delicious",
+                  style: TextStyle(
+                    fontSize: 32,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            const Padding(
               padding: EdgeInsets.only(left: 20),
               child: Text(
-                "Delicious",
+                "food for you",
                 style: TextStyle(
                   fontSize: 32,
                   fontWeight: FontWeight.bold,
                 ),
               ),
             ),
-          ),
-          const Padding(
-            padding: EdgeInsets.only(left: 20),
-            child: Text(
-              "food for you",
-              style: TextStyle(
-                fontSize: 32,
-                fontWeight: FontWeight.bold,
-              ),
-            ),
-          ),
-          const SizedBox(height: 16),
-          Padding(
-            padding: const EdgeInsets.all(20.0),
-            child: TextField(
-              decoration: InputDecoration(
-                hintText: 'Search',
-                prefixIcon: const Icon(Icons.search),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: BorderSide.none,
-                ),
-                filled: true,
-                fillColor: Colors.grey[200],
-              ),
-            ),
-          ),
-          const SizedBox(height: 24),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              _buildCategoryItem(context, 'Foods', true),
-              _buildCategoryItem(context, 'Drinks', false),
-              _buildCategoryItem(context, 'Snacks', false),
-              _buildCategoryItem(context, 'Sauce', false),
-            ],
-          ),
-          const SizedBox(height: 24),
-          const Padding(
-            padding: EdgeInsets.only(right: 20),
-            child: Align(
-              alignment: Alignment.centerRight,
-              child: Text(
-                "More...",
-                style: TextStyle(color: Color.fromARGB(255, 250, 74, 12)),
-              ),
-            ),
-          ),
-          const SizedBox(height: 50),
-          SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
+            const SizedBox(height: 16),
+            Padding(
+                padding: const EdgeInsets.all(20.0),
+                child: TextField(
+                  // controller: _searchController,
+                  decoration: InputDecoration(
+                    hintText: 'Search',
+                    prefixIcon: const Icon(Icons.search),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      borderSide: BorderSide.none,
+                    ),
+                    filled: true,
+                    fillColor: Colors.grey[200],
+                  ),
+                  onSubmitted: (query) {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => searchScreen(),
+                      ),
+                    );
+                  },
+                )),
+            const SizedBox(height: 24),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [
-                const SizedBox(
-                  width: 10,
-                ),
-                _buildCard('assets/images/food1.png', 'Veggie', 'tomato mix',
-                    'N1,900'),
-                const SizedBox(
-                  width: 10,
-                ),
-                _buildCard('assets/images/food2.png', 'Veggie', 'tomato mix',
-                    'N1,900'),
-                const SizedBox(
-                  width: 10,
-                ),
-                _buildCard('assets/images/food3.png', 'Veggie', 'tomato mix',
-                    'N1,900'),
-                const SizedBox(
-                  width: 10,
-                ),
+                _buildCategoryItem(context, 'Foods', true),
+                _buildCategoryItem(context, 'Drinks', false),
+                _buildCategoryItem(context, 'Snacks', false),
+                _buildCategoryItem(context, 'Sauce', false),
               ],
             ),
-          ),
-        ],
+            const SizedBox(height: 24),
+            const Padding(
+              padding: EdgeInsets.only(right: 20),
+              child: Align(
+                alignment: Alignment.centerRight,
+                child: Text(
+                  "More...",
+                  style: TextStyle(color: Color.fromARGB(255, 250, 74, 12)),
+                ),
+              ),
+            ),
+            const SizedBox(height: 24),
+            SizedBox(
+              height: 250, // Adjust the height as needed
+              child: SingleChildScrollView(
+                scrollDirection: Axis.horizontal,
+                child: Row(
+                  children: [
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    _buildCard('assets/images/food1.png', 'Veggie',
+                        'tomato mix', 'N1,900'),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    _buildCard('assets/images/food2.png', 'Veggie',
+                        'tomato mix', 'N1,900'),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                    _buildCard('assets/images/food3.png', 'Veggie',
+                        'tomato mix', 'N1,900'),
+                    const SizedBox(
+                      width: 10,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ],
+        ),
       ),
       bottomNavigationBar: BottomNavigationBar(
         items: const [
@@ -133,6 +148,34 @@ class HomeScreen extends StatelessWidget {
             label: '',
           ),
         ],
+        onTap: (int index) {
+          switch (index) {
+            // case 0:
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => const HomeScreen()),
+            //   );
+            //   break;
+            // case 1:
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => const HomeScreen()),
+            //   );
+            //   break;
+            case 2:
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: (context) => const ProfileScreen()),
+              );
+              break;
+            // case 3:
+            //   Navigator.push(
+            //     context,
+            //     MaterialPageRoute(builder: (context) => const HomeScreen()),
+            //   );
+            //   break;
+          }
+        },
       ),
       drawer: Drawer(
         backgroundColor: const Color.fromARGB(255, 250, 74, 12),
@@ -173,7 +216,7 @@ class HomeScreen extends StatelessWidget {
                       Navigator.push(
                           context,
                           MaterialPageRoute(
-                              builder: (context) => const ProfileScreen()));
+                              builder: (context) => const CardScreen()));
                     },
                   ),
                   const Padding(
@@ -226,32 +269,12 @@ class HomeScreen extends StatelessWidget {
                 ],
               ),
             ),
-            // const Padding(
-            //   padding: EdgeInsets.all(25.0),
-            //   child: Row(
-            //     // mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            //     children: [
-            //       Text("Sign Out",
-            //           style: TextStyle(color: Colors.white, fontSize: 18)),
-            //       SizedBox(
-            //         width: 10,
-            //       ),
-            //       Icon(
-            //         Icons.logout_outlined,
-            //         color: Colors.white,
-            //         size: 32,
-            //       )
-
-            //     ],
-
-            //   ),
-            // ),
             GestureDetector(
               onTap: () {
                 Navigator.push(
                     context,
                     MaterialPageRoute(
-                        builder: (context) => const ProfileScreen()));
+                        builder: (context) => const LoginScreen()));
               },
               child: const Padding(
                 padding: EdgeInsets.all(25.0),

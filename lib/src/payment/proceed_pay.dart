@@ -127,7 +127,7 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                     child: Column(
                       children: [
                         RadioListTile<SingingCharacter>(
-                          title: const Text('Lafayette'),
+                          title: const Text('Door delivery'),
                           activeColor: const Color.fromARGB(255, 255, 74, 12),
                           value: SingingCharacter.lafayette,
                           groupValue: _character,
@@ -154,7 +154,7 @@ class _ProceedPayScreenState extends State<ProceedPayScreen> {
                         ),
                         const SizedBox(height: 8),
                         RadioListTile<SingingCharacter>(
-                          title: const Text('jefferson'),
+                          title: const Text('Pick up'),
                           activeColor: const Color.fromARGB(255, 255, 74, 12),
                           value: SingingCharacter.jefferson,
                           groupValue: _character,

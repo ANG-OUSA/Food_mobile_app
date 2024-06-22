@@ -1,4 +1,7 @@
+// ignore: file_names
 import 'package:flutter/material.dart';
+import 'package:flutter_project/src/profile/profile_screen.dart';
+import 'package:flutter_project/src/views/home_screen.dart';
 
 void main() {
   runApp(const ProfileApp());
@@ -10,7 +13,7 @@ class ProfileApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const ProfileScreen(),
+      home: const HomeScreen(),
       theme: ThemeData(
         primaryColor: Colors.white,
       ),
@@ -29,7 +32,12 @@ class ProfileScreen extends StatelessWidget {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            // Handle back button action
+            Navigator.push(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const HomeScreen(),
+              ),
+            );
           },
         ),
       ),
@@ -64,7 +72,7 @@ class ProfileScreen extends StatelessWidget {
                 children: [
                   CircleAvatar(
                     radius: 30,
-                    backgroundImage: AssetImage('lib/asset/ousa.png'),
+                    backgroundImage: AssetImage('assets/images/ousa.png'),
                   ),
                   SizedBox(width: 16),
                   Column(
@@ -109,20 +117,20 @@ class ProfileScreen extends StatelessWidget {
                   ),
                 ],
               ),
-              child: Column(
+              child: const Column(
                 children: [
                   PaymentMethodTile(
                     icon: Icons.credit_card,
                     label: 'Card',
                     selected: true,
                   ),
-                  const Divider(),
+                  Divider(),
                   PaymentMethodTile(
                     icon: Icons.account_balance,
                     label: 'Bank account',
                     selected: false,
                   ),
-                  const Divider(),
+                  Divider(),
                   PaymentMethodTile(
                     icon: Icons.account_balance_wallet,
                     label: 'Paypal',
@@ -135,21 +143,24 @@ class ProfileScreen extends StatelessWidget {
             Center(
               child: ElevatedButton(
                 onPressed: () {
-                  // Handle update button action
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => const MyProfileScreen(),
+                    ),
+                  );
                 },
-                child: const Text(
-                  'Update',
-                  style: TextStyle(fontSize: 16, color: Colors.white),
-                ),
                 style: ElevatedButton.styleFrom(
                   padding:
                       const EdgeInsets.symmetric(horizontal: 150, vertical: 15),
-                  //primary: Colors.orange,
                   backgroundColor: Colors.orange[900],
-
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(30),
                   ),
+                ),
+                child: const Text(
+                  'Update',
+                  style: TextStyle(fontSize: 16, color: Colors.white),
                 ),
               ),
             ),
@@ -165,7 +176,7 @@ class PaymentMethodTile extends StatelessWidget {
   final String label;
   final bool selected;
 
-  PaymentMethodTile(
+  const PaymentMethodTile(
       {super.key,
       required this.icon,
       required this.label,
